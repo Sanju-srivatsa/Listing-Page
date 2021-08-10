@@ -1,0 +1,283 @@
+  body{
+    padding:0;
+    margin: 0;
+  }
+  .container{
+    position: relative;
+    margin-top: 100px;
+  }
+  .logo-image{
+  float: left;
+  width:auto;
+  height: 100%;
+  display: flex;
+  z-index: -9;
+
+  }
+  strong{
+    color:black;
+  }
+  nav{
+    position: fixed;
+    z-index:10;
+    left:0;
+    right:0;
+    top:0;
+    font-family: 'Montserrat', cursive;
+    padding:0.5%;
+    height:80px;
+    background-color: coral;
+    border-bottom: 3px solid black;
+  }
+  nav .logo{
+    float: left;
+    width:40%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    font-size: 45px;
+    color: white;
+  }
+  nav .links {  
+    float: right;
+    padding: 0;
+    margin:0;
+    width:60%;
+    height: 100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    font-style: bold;
+  }
+  nav .links li{
+    list-style: none;
+    
+  }
+  nav .links a{
+    display:block;
+    position: relative;
+    padding: 0.2em;
+    font-size:16px;
+    font-weight: bold; 
+    margin-right:20px;
+    color:white;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  nav .links a:hover{
+    background-color:#ff471a;
+    color:black;
+    transform: scale(1.04);
+  }
+  nav .links a:active{
+    background-color:#ff471a;
+    color:white;
+  }
+  #nav-toggle {
+    position: absolute;
+    top: -100px;
+  }
+  nav .hamburger{
+    display: none;
+    position: absolute;
+    right: 0.5%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  nav .hamburger .line{
+    width:30px;
+    height:5px;
+    background-color: white;
+    margin:5px;
+    border-radius: 3px;
+  }
+  @media screen and (max-width: 768px){
+  nav .logo-image{
+    
+  }
+  nav .logo-image{
+    float: none;
+  }
+  nav .logo{
+      float:left;
+      width:auto;
+      justify-content: center;
+    }
+
+    nav .links{
+    float:none;
+    position: fixed; 
+    z-index:9;
+    left: 0;
+    right:0;
+    top:100px;
+    bottom: 100%;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0, 0.8); 
+    transition: all .5s ease-in-out;
+    }
+    nav .links a{
+      font-size:20px;
+    }
+    nav .hamburger{
+      display:block;
+    }
+    nav :checked ~ .links{
+      bottom: 0;
+    }
+    nav :checked ~ .hamburger .line:nth-child(1){
+      transform: translateY(10px) rotate(225deg);
+    }
+    nav :checked ~ .hamburger .line:nth-child(3){
+      transform: translateY(-10px) rotate(-225deg);
+    }
+    nav :checked ~ .hamburger .line:nth-child(2){
+    opacity: 0;
+    }
+  } 
+  .items{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    background-color: antiquewhite;
+    /* background-image: url("https://wallpaperaccess.com/full/1698004.jpg") */
+  }
+  .item img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius: 2%;
+    cursor:pointer;
+      box-shadow: 10px 8px 8px -8px whitesmoke ;
+    transition: 0.2s ease;
+  }
+  .item img:hover{
+    transform: scale(1.04);
+  }
+  .item h4{
+    padding: 5px;
+    text-align: center;
+    color: tomato;
+    font-size: 20px;
+  }
+  .item-button{
+      /* padding: 5px 30px; */
+    border:none;
+    outline: none;
+    color:white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size:20px;
+    display: block;
+    margin:0 auto;
+    margin-left: 145px;
+    margin-top:10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-content: center;
+    text-align:center;
+    line-height: 42px;
+    -webkit-perspective: 230px;
+    perspective: 230px;
+  }
+  .item-button span {
+    background-color:coral;
+    display: block;
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    border-radius: 5px;
+    margin:0;
+    justify-content: center;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  .item-button span:nth-child(1) {
+    /* box-shadow: 
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001; */
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+  }
+  .item-button span:nth-child(2) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+  }
+  .item-button:hover span:nth-child(1) {
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+  .item-button:hover span:nth-child(2) {
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+  color: transparent;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+  }
+
+  .checked{
+    color:gold;
+  }
+  .rating{
+    display: flex;
+    height: 3px;
+    padding-top:10px;
+    justify-content: center;
+    color: black;
+    font-size:20px;
+  }
+  hr{
+    margin:0 auto;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .items{
+      grid-template-columns: repeat(2,1fr);
+    }
+    
+  }
+  @media screen and (max-width: 768px) {
+    .items{
+      grid-template-columns: repeat(1,1fr);
+    }
+    .item-button{
+      margin-bottom: 20px;
+      margin-left:110px;
+      justify-content: center;
+    left: 0;
+    right:0;
+    position: inherit;
+    width: auto;
+    height: auto;
+    }
+  }
